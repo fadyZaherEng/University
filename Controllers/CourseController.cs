@@ -27,7 +27,7 @@ namespace University.Controllers
             course.CourseIsAvailable = true;
             _context.Courses.Add(course);
             _context.SaveChanges();
-            return View("Add ");
+            return View();
         }
     }
 }
