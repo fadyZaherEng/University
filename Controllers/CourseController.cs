@@ -8,17 +8,15 @@ namespace University.Controllers
         UniversityDBContext _context=new UniversityDBContext();
         public ActionResult GetCourses()
         {
-
             List<Course> courses = _context.Courses.ToList();
             List<Course> coursesList = (from course in _context.Courses select course).ToList();
-            return View("GetCourses", courses);
+            return View("GetCourses",courses);
         }
         
         public ActionResult GetCourseDetails(int ID)
         {
          Course course = _context.Courses.Find(ID);
-            Course courseDetails = (from courseDetail in
-         _context.Courses where courseDetail.CourseID==ID select courseDetail).FirstOrDefault();
+         Course courseDetails=(from courseDetail in _context.Courses where courseDetail.CourseID==ID select courseDetail).FirstOrDefault();
           return View("GetCourseDetails", course);
         }
         public ActionResult AddCourse()
