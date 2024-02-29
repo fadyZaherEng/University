@@ -13,5 +13,6 @@ namespace University.Models
          public required string RoomName { get; set; }
          public int RoomIsAvailable { get; set; }
          public int RoomSize { get; set;}
+         public String RoomLocation { get; set; }
     }
 }
