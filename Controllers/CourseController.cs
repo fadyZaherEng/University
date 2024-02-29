@@ -17,7 +17,7 @@ namespace University.Controllers
         public ActionResult GetCourseDetails(int ID)
         {
          Course course = _context.Courses.Find(ID);
-         Course courseDetails=(from courseDetail in
+            Course courseDetails = (from courseDetail in
          _context.Courses where courseDetail.CourseID==ID select courseDetail).FirstOrDefault();
           return View("GetCourseDetails", course);
         }
