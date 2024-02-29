@@ -8,9 +8,10 @@ namespace University.Controllers
         UniversityDBContext _context=new UniversityDBContext();
         public ActionResult GetCourses()
         {
+
             List<Course> courses = _context.Courses.ToList();
             List<Course> coursesList = (from course in _context.Courses select course).ToList();
-            return View("Courses",courses);
+            return View("GetCourses", courses);
         }
         
         public ActionResult GetCourseDetails(int ID)
@@ -18,7 +19,7 @@ namespace University.Controllers
          Course course = _context.Courses.Find(ID);
          Course courseDetails=(from courseDetail in
          _context.Courses where courseDetail.CourseID==ID select courseDetail).FirstOrDefault();
-          return View("Course",course);
+          return View("GetCourseDetails", course);
         }
         public ActionResult AddCourse()
         {
@@ -27,7 +28,7 @@ namespace University.Controllers
             course.CourseIsAvailable = true;
             _context.Courses.Add(course);
             _context.SaveChanges();
-            return View();
+            return View("AddCourse");
         }
     }
 }
