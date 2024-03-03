@@ -11,7 +11,7 @@ namespace University.Controllers
            List<Teacher> teachers = db.Teachers.ToList();
            Teachers teacherList = new Teachers();
            teacherList.teachers = teachers;
-           return View("GetTeachers", teacherList);
+           return View("GetTeachers", teachers);
        }
         public ActionResult AddTeacher()
         {

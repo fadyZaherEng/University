@@ -5,4 +5,10 @@
 }
 
 <h1>GetCourses:@Model.courses.Count</h1>
+<div>
+    @foreach (var item in Model.courses) {
+        <p> @item.CourseName : @item.CourseID : @item.CourseIsAvailable</p>
+        
+    }
+</div>
 

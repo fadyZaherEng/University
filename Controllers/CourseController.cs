@@ -6,6 +6,7 @@ namespace University.Controllers
     public class CourseController : Controller
     {
         UniversityDBContext _context=new UniversityDBContext();
+        [Route("Course/GetCourses")]
         public ActionResult GetCourses()
         {
             List<Course> courses = _context.Courses.ToList();
@@ -14,7 +15,7 @@ namespace University.Controllers
          //   List<Course> coursesList = (from course in _context.Courses select course).ToList();
             return View("GetCourses",courseList);
         }
-        
+        [Route("Course/GetCourseDetails/{ID:int:range(1,10):required:regex(\\d+):maxlength(10)}")]
         public ActionResult GetCourseDetails(int ID)
         {
          Course course = _context.Courses.Find(ID);
@@ -30,8 +31,11 @@ namespace University.Controllers
             _context.SaveChanges();
             return View("AddCourse",course);
         }
-        public ActionResult UpdateCourse(int ID)
+        public ActionResult UpdateCourse(int? ID,String Name)
         {
+            if(!ID.HasValue) ID=1;
+            if(String.IsNullOrWhiteSpace(Name)) Name="C#";
+
             Course course=new Course();
             course.CourseIsAvailable=true;
             course.CourseName="C#";

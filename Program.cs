@@ -32,10 +32,10 @@ namespace University
             app.UseRouting();
 
             app.UseAuthorization();
-
+            
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Course}/{action=GetCourses}/{id?}");
 
             app.Run();
         }
