@@ -12,6 +12,8 @@ namespace University.Controllers
             List<Course> courses = _context.Courses.ToList();
             Courses courseList = new Courses();
             courseList.courses = courses;
+            ViewData["Courses"] = courseList;
+            ViewBag.Courses = courseList;
          //   List<Course> coursesList = (from course in _context.Courses select course).ToList();
             return View("GetCourses",courseList);
         }

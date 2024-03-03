@@ -1,8 +1,10 @@
 ﻿@model University.Models.Rooms;
+@using University.Models;
 @{
     ViewData["Title"] = "GetRooms";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>GetRooms:@Model.rooms.Count</h1>
+<h1>GetRooms:@(((Rooms)ViewData["rooms"]).rooms[0].RoomLocation)</h1>
 

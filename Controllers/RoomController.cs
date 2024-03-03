@@ -11,6 +11,8 @@ namespace University.Controllers
             List<Room> rooms = db.Rooms.ToList();
             Rooms roomlist = new Rooms();
             roomlist.rooms = rooms;
+            ViewData["rooms"] = rooms;
+            ViewBag.rooms = rooms;
             return View("GetRooms",roomlist);
         }
         public ActionResult GetRoomDetails(int id)
