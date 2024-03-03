@@ -10,8 +10,9 @@ namespace University.Models
          public int RoomID { get; set; }
          [Required]
          [StringLength(100)]
-         public required string RoomName { get; set; }
-         public int RoomIsAvailable { get; set; }
+         public  string RoomName { get; set; }
+         public bool RoomIsAvailable { get; set; }
          public int RoomSize { get; set;}
+         public String RoomLocation { get; set; }
     }
 }

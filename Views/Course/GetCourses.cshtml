@@ -1,0 +1,23 @@
+﻿@model University.Models.Courses
+@using University.Models;
+@{
+    ViewData["Title"] = "GetCourses";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ @if (Model.courses.Count == 0){
+        <p> No courses found</p>
+    }else{
+        <p> Courses found</p>
+    }
+
+<h1>GetCourses:@Model.courses.Count</h1>
+<div>
+    @foreach (var item in Model.courses) {
+        <p> @item.CourseName : @item.CourseID : @item.CourseIsAvailable</p>
+        
+    }
+</div>
+<h1>@(((Courses)ViewData["Courses"]).courses[0].CourseName)</h1>
+
+<h1>@ViewBag.Courses.courses[0].CourseName</h1>
+

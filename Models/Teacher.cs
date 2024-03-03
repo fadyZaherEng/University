@@ -10,7 +10,7 @@ namespace University.Models
         public int TeacherID { get; set; }
         [Required]
         [StringLength(100)]
-        public required string TeacherName { get; set; }
+        public  string TeacherName { get; set; }
         public int TeacherNumber { get; set; }
     }
 }
