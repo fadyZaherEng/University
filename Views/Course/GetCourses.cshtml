@@ -10,6 +10,24 @@
         <p> Courses found</p>
     }
 
+  
+	<div class="wrap">
+		<!-- Begin Your Code -->
+		<section class="content">
+		@foreach (var item in Model.courses) {
+			<div class="content-container">
+				
+             Course ID: @item.CourseID # Course Available: @item.CourseIsAvailable # Course Name: @item.CourseName
+				
+				<article class="block-item">
+					<img src="http://farm9.staticflickr.com/8072/8346734966_f9cd7d0941_z.jpg">
+				</article>
+			</div>
+		}
+		</section>
+		<!-- End Your Code -->
+	</div>
+#############################################################################
 <h1>GetCourses:@Model.courses.Count</h1>
 <div>
     @foreach (var item in Model.courses) {
