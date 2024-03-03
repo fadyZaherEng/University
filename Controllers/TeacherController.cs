@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Data.Entity;
 using University.Models;
 
 namespace University.Controllers
@@ -46,6 +47,10 @@ namespace University.Controllers
             teacher.TeacherName = "Ahmed";
             teacher.TeacherNumber = 20;
             return View("GetTeacherDetails", teacher);
+        }
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
         }
     }
 }

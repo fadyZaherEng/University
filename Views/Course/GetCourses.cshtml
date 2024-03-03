@@ -4,6 +4,11 @@
     ViewData["Title"] = "GetCourses";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+ @if (Model.courses.Count == 0){
+        <p> No courses found</p>
+    }else{
+        <p> Courses found</p>
+    }
 
 <h1>GetCourses:@Model.courses.Count</h1>
 <div>
