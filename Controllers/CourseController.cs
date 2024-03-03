@@ -55,5 +55,9 @@ namespace University.Controllers
             _context.SaveChanges();
             return View("DeleteCourse",courseInDatabase);
         }
+        protected override void Dispose(bool disposing)
+        {
+          _context.Dispose();
+        }
     }
 }

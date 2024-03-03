@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using System.Data.Entity;
 using University.Models;
 
@@ -43,6 +44,8 @@ namespace University.Controllers
         public ActionResult GetTeacherDetails(int id)
         {
             Teacher teacher = db.Teachers.Find(id);
+            Teacher teacherDetails = db.Teachers.SingleOrDefault(teacher => teacher.TeacherID == id);
+            if(teacherDetails==null) return  Content("This teacher does not exist");
             teacher = new Teacher();
             teacher.TeacherName = "Ahmed";
             teacher.TeacherNumber = 20;

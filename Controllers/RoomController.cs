@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Data.Entity;
 using University.Models;
 
 namespace University.Controllers
@@ -47,6 +48,9 @@ namespace University.Controllers
             db.SaveChanges();
             return View("DeleteRoom",room);
         }
-
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+        }
     }
 }

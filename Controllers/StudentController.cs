@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Data.Entity;
 using University.Models;
 
 namespace University.Controllers
@@ -44,6 +45,9 @@ namespace University.Controllers
             Student student = db.Students.Find(id);
             return View("GetStudentDetails", student);
         }
-
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+        }
     }
 }
