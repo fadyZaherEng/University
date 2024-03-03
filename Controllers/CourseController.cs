@@ -9,14 +9,16 @@ namespace University.Controllers
         public ActionResult GetCourses()
         {
             List<Course> courses = _context.Courses.ToList();
-            List<Course> coursesList = (from course in _context.Courses select course).ToList();
-            return View("GetCourses",courses);
+            Courses courseList = new Courses();
+            courseList.courses = courses;
+         //   List<Course> coursesList = (from course in _context.Courses select course).ToList();
+            return View("GetCourses",courseList);
         }
         
         public ActionResult GetCourseDetails(int ID)
         {
          Course course = _context.Courses.Find(ID);
-         Course courseDetails=(from courseDetail in _context.Courses where courseDetail.CourseID==ID select courseDetail).FirstOrDefault();
+       //  Course courseDetails=(from courseDetail in _context.Courses where courseDetail.CourseID==ID select courseDetail).FirstOrDefault();
           return View("GetCourseDetails", course);
         }
         public ActionResult AddCourse()
@@ -26,7 +28,26 @@ namespace University.Controllers
             course.CourseIsAvailable = true;
             _context.Courses.Add(course);
             _context.SaveChanges();
-            return View("AddCourse");
+            return View("AddCourse",course);
+        }
+        public ActionResult UpdateCourse(int ID)
+        {
+            Course course=new Course();
+            course.CourseIsAvailable=true;
+            course.CourseName="C#";
+            Course courseInDatabase = _context.Courses.Find(ID);
+            courseInDatabase=course;
+            _context.SaveChanges();
+            return View("UpdateCourse",courseInDatabase);
+        }
+        public ActionResult DeleteCourse(int ID)
+        {
+            Course courseInDatabase=new Course();
+            courseInDatabase = _context.Courses.Find(ID);
+         //   courseInDatabase = (from course in _context.Courses where course.CourseID == ID select course).FirstOrDefault();
+            _context.Courses.Remove(courseInDatabase);    
+            _context.SaveChanges();
+            return View("DeleteCourse",courseInDatabase);
         }
     }
 }
