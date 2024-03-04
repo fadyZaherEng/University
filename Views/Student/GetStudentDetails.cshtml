@@ -3,6 +3,15 @@
     ViewData["Title"] = "GetStudentDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+    <div class="container">
+        <h1>Student Information</h1>
+        <div class="form-container">
+                <label for="name">Name : @Model.StudentName</label></br>
+                <label for="phoneNumber">Phone Number : @Model.StudentNumber</label></br>
+            <button class="custom-btn btn-12" onclick="history.back()"><span>Click!</span><span>Back</span></button>
+          
+        </div>    
+    </div>
 
-<h1>GetStudentDetails</h1>
+
 

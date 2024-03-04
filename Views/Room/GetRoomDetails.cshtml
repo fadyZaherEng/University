@@ -1,8 +1,35 @@
-﻿
-@{
-    ViewData["Title"] = "GetRoomDetails";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h1>GetRoomDetails</h1>
-
+﻿@model University.Models.Room
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/roomDetails.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="product-img">
+            <img src="http://bit.ly/2tMBBTd" height="420" width="327">
+        </div>
+        <div class="product-info" title="Room Details">
+            <div class="product-text">
+                <h1>@Model.RoomName</h1>
+                <h2>@Model.RoomLocation</h2>
+                @if (Model.RoomIsAvailable == true)
+                {
+                    <h2>Room is Available</h2>
+                }
+                else
+                {
+                    <h2>Room is not Available</h2>
+                }
+                <h2>@Model.RoomSize$</h2>
+            </div>
+            <div class="product-price-btn">
+                <button type="button">Book Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -3,6 +3,30 @@
     ViewData["Title"] = "GetStudents";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<table class="container">
+	<thead>
+		<tr>
+			<th><h1>Student Name</h1></th>
+			<th><h1>Student Number</h1></th>
+            <th><h1>Delete</h1></th>
+			<th><h1>Edit</h1></th>
+		</tr>
+	</thead>
+	<div class="row">
+	<tbody>
+		@foreach (Student student in Model.students)
+		{
+			<tr>
+				<td><a href="@Url.Action("GetStudentDetails", "Student", new {@id = @student.StudentID })">@student.StudentName</a></td>
+				<td>@student.StudentNumber</td>
+				<td><a href="@Url.Action("DeleteStudent", "Student", new {@id = @student.StudentID })">Delete </a></td>
+                <td><a href="@Url.Action("UpdateStudent", "Student", new {@id = @student.StudentID })">Edit </a></td>
+			</tr>
+		}
+	</tbody>
+	<button class="custom-btn btn-12" onclick="window.location.href='/Student/AddStudent'"
+" width="20%"><span>Click!</span><span>Add Student</span></button>
 
-<h1>GetStudents:Model.students.count</h1>
+	</div>
+</table>
 

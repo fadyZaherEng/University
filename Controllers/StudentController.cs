@@ -7,7 +7,8 @@ namespace University.Controllers
     public class StudentController : Controller
     {
        UniversityDBContext db = new UniversityDBContext();
-       public ActionResult GetStudents()
+        [HttpGet]
+        public ActionResult GetStudents()
        {
            List<Student> students = db.Students.ToList();
            Students studentList = new Students();
@@ -16,20 +17,19 @@ namespace University.Controllers
        }
         public ActionResult AddStudent()
         {
-            Student student = new Student();
-            student.StudentName = "Ahmed";
-            student.StudentNumber = 20;
+            return View("AddStudent");
+        }
+        [HttpPost]
+        public ActionResult SubmitStudent(Student student)
+        {
             db.Students.Add(student);
             db.SaveChanges();
-            return View("AddStudent", student);
+           return RedirectToAction("GetStudents");
         }
         public ActionResult UpdateStudent(int id)
         {
-            Student newStudent = new Student();
-            newStudent.StudentName = "Ahmed";
-            newStudent.StudentNumber = 20;
             Student student = db.Students.Find(id);
-            student = newStudent;
+            DeleteStudent(id);
             db.SaveChanges();
             return View("UpdateStudent", student);
         }
@@ -38,7 +38,7 @@ namespace University.Controllers
             Student student = db.Students.Find(id);
             db.Students.Remove(student);
             db.SaveChanges();
-            return View("DeleteStudent", student);
+            return RedirectToAction("GetStudents");
         }
         public ActionResult GetStudentDetails(int id)
         {

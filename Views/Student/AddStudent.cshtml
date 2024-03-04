@@ -1,8 +1,10 @@
-﻿@model University.Models.Student
-@{
-    ViewData["Title"] = "AddStudent";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@using (Html.BeginForm("SubmitStudent", "Student", FormMethod.Post))
+{
+    <label for="StudentName" >Student Name&ensp;&ensp;</label>
+    <input type="text" name="StudentName" />
+    <br />
+    <label for="StudentNumber">Student Number</label>
+    <input type="text" name="StudentNumber" />
+    <button class="custom-btn btn-3" type="submit">Submit</button><br /><br />
 }
-
-<h1>AddStudent</h1>
 
