@@ -11,6 +11,7 @@
 			<th><h1>Student Link</h1></th>
 		</tr>
 	</thead>
+	<div class="row">
 	<tbody>
 		@foreach (Student student in Model.students)
 		{
@@ -21,5 +22,9 @@
 			</tr>
 		}
 	</tbody>
+	<button class="custom-btn btn-12" onclick="window.location.href='/Student/AddStudent'"
+" width="20%"><span>Click!</span><span>Add Student</span></button>
+
+	</div>
 </table>
 

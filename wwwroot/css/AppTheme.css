@@ -1,4 +1,8 @@
-﻿.button {
+﻿.label {
+    display: block;
+    width: 300px;
+}
+.button {
     background-color: #04AA6D; /* Green */
     border: none;
     color: white;
@@ -671,7 +675,7 @@ button {
     bottom: 20px;
     border: none;
     box-shadow: none;
-    width: 130px;
+    width: 40%;
     height: 40px;
     line-height: 42px;
     -webkit-perspective: 230px;
@@ -683,11 +687,11 @@ button {
         background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
         display: block;
         position: absolute;
-        width: 130px;
+        width: 40%;
         height: 40px;
         box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
         border-radius: 5px;
-        margin: 0;
+        margin:0,0,60%,0; 
         text-align: center;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;

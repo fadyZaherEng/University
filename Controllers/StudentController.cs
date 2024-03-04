@@ -16,12 +16,20 @@ namespace University.Controllers
        }
         public ActionResult AddStudent()
         {
-            Student student = new Student();
-            student.StudentName = "Ahmed";
-            student.StudentNumber = 20;
+            //Student student = new Student();
+            //student.StudentName = "Ahmed";
+            //student.StudentNumber = 20;
+            //db.Students.Add(student);
+            //db.SaveChanges();
+            return View("AddStudent");
+        }
+        public ActionResult SubmitStudent(Student student)
+        {
             db.Students.Add(student);
             db.SaveChanges();
-            return View("AddStudent", student);
+            Students students = new Students();
+            students.students = db.Students.ToList();
+            return View("GetStudents", students);
         }
         public ActionResult UpdateStudent(int id)
         {
