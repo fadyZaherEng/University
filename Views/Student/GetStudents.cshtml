@@ -3,6 +3,23 @@
     ViewData["Title"] = "GetStudents";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>GetStudents:Model.students.count</h1>
+<table class="container">
+	<thead>
+		<tr>
+			<th><h1>Student Name</h1></th>
+			<th><h1>Student Number</h1></th>
+			<th><h1>Student Link</h1></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (Student student in Model.students)
+		{
+			<tr>
+				<td>@student.StudentName</td>
+				<td>@student.StudentNumber</td>
+				<td><a href="@Url.Action("GetStudentDetails", "Student", new {@id = @student.StudentID })">View Student</a></td>
+			</tr>
+		}
+	</tbody>
+</table>
 
