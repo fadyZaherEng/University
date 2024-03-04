@@ -2,9 +2,57 @@
 @using University.Models;
 @{
     ViewData["Title"] = "GetRooms";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>GetRooms:@Model.rooms.Count</h1>
-<h1>GetRooms:@(((Rooms)ViewData["rooms"]).rooms[0].RoomLocation)</h1>
+<h1>Number of rooms:@Model.rooms.Count</h1>
+<section class="hotel-info">
+   @foreach (var item in Model.rooms)
+   {
+        <div class="room" id="queen-room">
+            <h3>@item.RoomName</h3>
+            <p>Cost: $@item.RoomSize/night</p>
+            <p>Available Or Not: <span id="queen-available-rooms">@item.RoomIsAvailable</span></p>
+            <input type="date" id="queen-check-in-date" placeholder="Check-in Date">
+            <input type="date" id="queen-check-out-date" placeholder="Check-out Date">
+            <button class="view-room-btn"
+            onclick="window.location.href='/Room/GetRoomDetails/@item.RoomID'">View Room</button>
+        </div>
+   }
+</section>
 
+
+@* <div class="container">
+ <div id="Rooms" class="row list-group">
+@foreach (var item in (((List<Room>)ViewData["rooms"])))
+{
+    <div class="item  col-xs-4 col-lg-4">
+        <div class="thumbnail">
+            <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+            <div class="caption">
+                <h4 class="group inner list-group-item-heading"> @item.RoomName</h4>
+                <p class="group inner list-group-item-text">Rooms</p>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <p class="lead">$@item.RoomLocation </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        @* to make action three way @*@
+                        @*1*@
+                        @*   @Html.ActionLink("Details", "GetTeacherDetails",
+                    new {@class = "btn btn-success"},new {@id = item.TeacherID }) *@
+                        @*2*@
+                        @*   <a class="btn btn-success" href="@Url.Action("GetTeacherDetails", "Teacher",
+                    new { id = item.TeacherID })">
+                    Details
+                    </a>   *@
+                        @*3*@
+                    @*             <a class="btn btn-success" href="/Room/GetRoomDetails/@item.RoomID">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> *@
+@* }
+</div>
+</div> *@ 
