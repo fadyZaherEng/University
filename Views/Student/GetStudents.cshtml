@@ -8,7 +8,8 @@
 		<tr>
 			<th><h1>Student Name</h1></th>
 			<th><h1>Student Number</h1></th>
-			<th><h1>Student Link</h1></th>
+            <th><h1>Delete</h1></th>
+			<th><h1>Edit</h1></th>
 		</tr>
 	</thead>
 	<div class="row">
@@ -16,9 +17,10 @@
 		@foreach (Student student in Model.students)
 		{
 			<tr>
-				<td>@student.StudentName</td>
+				<td><a href="@Url.Action("GetStudentDetails", "Student", new {@id = @student.StudentID })">@student.StudentName</a></td>
 				<td>@student.StudentNumber</td>
-				<td><a href="@Url.Action("GetStudentDetails", "Student", new {@id = @student.StudentID })">View Student</a></td>
+				<td><a href="@Url.Action("DeleteStudent", "Student", new {@id = @student.StudentID })">Delete </a></td>
+                <td><a href="@Url.Action("UpdateStudent", "Student", new {@id = @student.StudentID })">Edit </a></td>
 			</tr>
 		}
 	</tbody>
