@@ -12,6 +12,9 @@ namespace University.Controllers
         {
             _logger = logger;
         }
+        public ActionResult draw_table() { 
+        return View();
+        }
 
         public IActionResult Index()
         {

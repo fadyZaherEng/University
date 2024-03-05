@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+</head>
+<body>
+    <script type="text/javascript">
+                       Function draw() {
+            document.write("lllllllllllllllllllllltable");
+            alert("Hello");
+            document.write("<table class='container'>");
+            for (var row = 0; row < 5; row++) {
+                document.write("<tr>");
+                for (var col = 0; col < 5; col++) {
+                    document.write("<td>" + row + "," + col + "</td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+    </script>
+    <input type="button" onclick="draw()" value="Draw" />
+</body>
+</html>
