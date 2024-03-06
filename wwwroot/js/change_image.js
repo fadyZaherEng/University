@@ -6,6 +6,4 @@
     //image.style.height = newHeight + 'px';
     document.getElementById("image").width = newWidth;
     document.getElementById("image").height = newHeight;
-    document.body.style.backgroundColor = "teal";
-    //document.bgColor="blue";
 }
