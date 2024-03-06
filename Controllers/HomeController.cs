@@ -12,8 +12,17 @@ namespace University.Controllers
         {
             _logger = logger;
         }
-        public ActionResult draw_table() { 
-        return View();
+        public ActionResult draw_table()
+        { 
+           return View();
+        }
+        public ActionResult change_image()
+        {
+            return View();
+        }
+        public ActionResult changeBackgroundColor()
+        {
+            return View();
         }
 
         public IActionResult Index()
