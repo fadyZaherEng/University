@@ -24,7 +24,10 @@ namespace University.Controllers
         {
             return View();
         }
-
+        public ActionResult calculator() 
+        {
+            return View(); 
+        }
         public IActionResult Index()
         {
             return View();
