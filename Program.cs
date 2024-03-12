@@ -35,7 +35,7 @@ namespace University
             
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Course}/{action=GetCourses}/{id?}");
+                pattern: "{controller=MentalityController}/{action=Index}/{id?}");
             
 
             app.Run();

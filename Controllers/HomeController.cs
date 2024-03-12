@@ -32,7 +32,10 @@ namespace University.Controllers
         {
             return View();
         }
-
+        public ActionResult SemanticsAndDiv()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
