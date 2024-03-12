@@ -16,6 +16,9 @@ namespace University.Controllers
         {
             return View();
         }
-
+        public ActionResult Lists()
+        {
+            return View();
+        }
     }
 }
