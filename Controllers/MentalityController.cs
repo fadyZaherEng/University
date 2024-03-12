@@ -8,5 +8,14 @@ namespace University.Controllers
         {
             return View();
         }
+        public ActionResult Audio()
+        {
+            return View();
+        }
+        public ActionResult Image()
+        {
+            return View();
+        }
+
     }
 }
