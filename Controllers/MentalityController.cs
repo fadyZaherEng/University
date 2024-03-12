@@ -20,5 +20,13 @@ namespace University.Controllers
         {
             return View();
         }
+        public ActionResult Inputs()
+        {
+            return View();
+        }
+        public ActionResult RegisterForm()
+        {
+            return View();
+        }
     }
 }
