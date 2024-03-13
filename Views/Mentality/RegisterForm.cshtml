@@ -6,10 +6,10 @@
   <style>
    .register {
     width:max-content;
-    margin: 0 auto;
-    padding: 10px;
+    margin: 20px;
+    padding: 20px;
     height:max-content;
-    border: 1px solid #ccc;
+    border: 1px dashed #000;
     border-radius: 5px;
     background-color: #f9f9f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -18,54 +18,101 @@
  </head>
  <body>
      <!--video 10 min 20 stop-->
-  <form method="post">
+  <form method="post" >
    <div class="register">
+    <!--Select-->
     <label for="salutation">Salutation</label><br/>
     <select id="salutation" name="salutation">
      <option value="Mr.">Mr.</option>
      <option value="Mrs.">Mrs.</option>
     </select><br/><br/>
+    <!--End of Select-->
+    <!--########################################-->
+    <!--different between readonly and disabled -->
+    <!--readonly will send the value-->
+    <!--disabled will not send the value-->
+    <!--Text-->
     <label for="firstname">First Name:</label>
-    <input type="text" id="firstname" name="firstname" placeholder="Firstname"><br/><br/>
+    <input type="text" id="firstname" name="firstname" placeholder="Firstname" required value="John" readonly><br/><br/>
     <label for="lastname">Last Name:</label>
-    <input type="text" id="lastname" name="lastname" placeholder="Lastname"><br/><br/>
+    <input type="text" id="lastname" name="lastname" placeholder="Lastname" required disabled><br/><br/>
     <label type="text" for="Gender">Gender:&nbsp;&nbsp;</label>
-    <input type="radio" id="gender" name="gender" value="male">
+    <!--End of Text-->
+    <!--########################################-->
+    <!--Radio-->
+    <input type="radio" id="gender" name="gender" value="male" required>
     <label for="male">Male</label>&nbsp;&nbsp;
     <input type="radio" id="gender" name="gender" value="female">
     <label for="female">Female</label><br/><br/>
+    <!--End of Radio-->
+    <!--########################################-->
+    <!--Email-->
     <label for=" email">E-Mail:</label>
-    <input type="email" id="email" name="email" placeholder="Email"><br/><br/>
+    <input type="email" id="email" name="email" placeholder="Email" required><br/><br/>
+    <!--End of Email-->
+    <!--########################################-->
+    <!--Password-->
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password" placeholder="Password"><br/><br/>
+    <input type="password" id="password" name="password" placeholder="Password" minlength="8" maxlength="20" required><br/><br/>
+    <!--End of Password-->
+    <!--########################################-->
+    <!--Phone-->
     <label for="phone">Phone:&nbsp;&nbsp;</label>
-    <input type="text" id="phone" name="phone" placeholder="Phone"><br/><br/>
+    <input type="text" id="phone" name="phone" placeholder="Phone" required><br/><br/>
+    <!--End of Phone-->
+    <!--########################################-->
+    <!--Date-->
     <label for="birthdate">Birthdate:&nbsp;&nbsp;</label>
     <input type="date" id="birthdate" name="birthdate"><br/><br/>
+    <!--End of Date-->
+    <!--########################################-->
+    <!--Address-->
     <label for="address">Address:&nbsp;&nbsp;</label>
     <input type="text" id="address" name="address" height="400px" width="200px" placeholder="Address"><br/><br/>
+    <!--End of Address-->
+    <!--########################################-->
+    <!--File-->
     <label for="file">Upload File:&nbsp;&nbsp;</label>
     <input type="file" id="file" name="file"><br/><br/>
+    <!--End of File-->
+    <!--########################################-->
+    <!--URL-->
     <label for="linkedIn" >LinkedIn:&nbsp;&nbsp;</label>
     <input type="url" id="linkedIn" name="linkedIn" placeholder="LinkedIn"><br/><br/>
     <label for="twitter">Twitter:&nbsp;&nbsp;</label>
-    <input type="url" id="twitter" name="twitter" placeholder="Twitter"><br/><br/>
-    <label for="range">Range:&nbsp;&nbsp;</label>
+    <!--End of URL-->
+    <!--########################################-->
+    <!--Range-->
     <input type="range" id="range" name="range" min="0" max="10"><br/><br/>
+    <!--End of Range-->
+    <!--########################################-->
+    <!--color-->
     <label for="color">Color:&nbsp;&nbsp;</label>
     <input type="color" id="color" name="color"><br/><br/>
+    <!--End of color-->
+    <!--########################################-->
+    <!--Time-->
     <label for="time">Time:&nbsp;&nbsp;</label>
     <input type="time" id="time" name="time"><br/><br/>
+    <!--End of Time-->
+    <!--########################################-->
+    <!--date,week,month,dateTime,search-->
     <label for="date">Date:&nbsp;&nbsp;</label>
     <input type="date" id="date" name="date"><br/><br/>
     <label for="week">Week:&nbsp;&nbsp;</label>
     <input type="week" id="week" name="week"><br/><br/>
     <label for="month">Month:&nbsp;&nbsp;</label>
     <input type="month" id="month" name="month"><br/><br/>
+    <label for="search">Search:&nbsp;&nbsp;</label>
+    <input type="search" id="search" name="search"><br /><br />
+    <!--End of date,week,month,dateTime,search-->
+    <!--########################################-->
+    <!--DateTime-->
     <label for="dateTime">DateTime:&nbsp;&nbsp;</label>
     <input type="datetime-local" id="dateTime" name="dateTime"><br/><br/>
-    <label for="search">Search:&nbsp;&nbsp;</label>
-    <input type="search" id="search" name="search"><br/><br/>
+    <!--End of DateTime-->
+    <!--########################################-->
+    <!--checkbox-->
     <label for="">What do you like?:&nbsp;&nbsp;</label>
     <input type="checkbox" value="music">
     <label for="">Music</label>&nbsp;&nbsp;
@@ -73,14 +120,12 @@
     <label for="">Movies</label>&nbsp;&nbsp;
     <input type="checkbox"   value="books">
     <label for="">Books</label><br/><br/>
-    <!--radio-->
-    <label for="">Gender:&nbsp;&nbsp;</label>
-    <input type="radio" id="gender" name="gender" value="male">
-    <label for="male">Male</label>&nbsp;&nbsp;
-    <input type="radio" id="gender" name="gender" value="female">
-    <label for="female">Female</label><br/><br/>
+    <!--End of checkbox-->
+    <!--########################################-->
+    <!--Submit and Reset-->
     <input type="submit" value="Submit">&nbsp;&nbsp;
     <input type="reset" value="Reset">
+    <!--End of Submit and Reset-->
    </div>
   </form>
  </body>
