@@ -28,5 +28,9 @@ namespace University.Controllers
         {
             return View();
         }
+        public ActionResult LearnCSS()
+        {
+            return View();
+        }
     }
 }
