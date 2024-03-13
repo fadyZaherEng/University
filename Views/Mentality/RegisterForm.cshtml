@@ -16,7 +16,9 @@
    }
   </style>
  </head>
- <body>
+<body>
+    <!--End of HTML Videos-->
+     
      <!--method-->
      <!--post for send sensitive data and  not show data-->
      <!--get for send and show data-->
@@ -28,14 +30,37 @@
      <fieldset  class="register" >
   <legend>Register Form</legend>
   <form method="post" action="/register.cshtml" novalidate>
-
-    <!--Select-->
+    <!--Select for select from option-->
     <label for="salutation">Salutation</label><br/>
-    <select id="salutation" name="salutation">
-     <option value="Mr.">Mr.</option>
-     <option value="Mrs.">Mrs.</option>
+    <select id="salutation" name="salutation" selected="Mrs." multiple>
+    <optgroup label="Salutation">
+       <option value="Mr.">Mr.</option>
+       <option value="Mrs.">Mrs.</option>
+    </optgroup>
+    <optgroup label="Gender">
+       <option value="Male">Male</option>
+       <option value="Female">Female</option>
+    </optgroup>
     </select><br/><br/>
+            <select id="salutation" name="salutation" selected="Mrs." >
+                <optgroup label="Salutation">
+                    <option value="Mr.">Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                </optgroup>
+                <optgroup label="Gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </optgroup>
+  </select><br /><br />
     <!--End of Select-->
+    <!--########################################-->
+    <!--datalist for select and search from option-->
+    <input list="datalist">
+    <datalist id="datalist">
+    <option value="Hassan"></option>
+    <option value="Ali"></option>
+    </datalist>
+    <br/><br/>
     <!--########################################-->
     <!--different between readonly and disabled -->
     <!--readonly will send the value-->
@@ -76,8 +101,8 @@
     <!--End of Date-->
     <!--########################################-->
     <!--Address-->
-    <label for="address">Address:&nbsp;&nbsp;</label>
-    <input type="text" id="address" name="address" height="400px" width="200px" placeholder="Address"><br/><br/>
+    <label for="address" align="left">Address:&nbsp;&nbsp;</label>
+    <textarea id="address" name="address" placeholder="Address" rows="10" cols="50" align="left"></textarea><br/><br/>
     <!--End of Address-->
     <!--########################################-->
     <!--File-->
