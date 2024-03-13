@@ -4,10 +4,29 @@
     <meta charset="utf-8" />
     <title>Learn CSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Internal CSS -->
+    <style>
+        .para {
+            color: blue;
+        }
+    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/css/ExternalStyle.css" />
 </head>
-
 <body>
-    <h1>First CSS</h1>
+    <!-- CSS Foucus on Style of HTML -->
+    <!-- CSS Style of HTML  there are three types -->
+    <!-- 1. Inline CSS -->
+    <!-- 2. External CSS -->
+    <!-- 3. Internal CSS -->
+    <!--##############################################-->
+    <!-- 1. Inline CSS -->
+    <h1 style="color:red; text-align:center">First CSS</h1>
+    <!-- 2. Internal CSS -->
+    <p id="para" class="para"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <!-- 3. External CSS -->
+    <p class="external-css">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <!--##############################################-->
 </body>
 
 </html>
