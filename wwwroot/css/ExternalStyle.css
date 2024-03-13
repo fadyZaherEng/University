@@ -1,5 +1,9 @@
 ﻿.external-css {
     color: aqua;
+    background-color:aquamarine;
+    background-color:#000000;
+    background-color:rgb(255,88,255);
+    background-color:rgba(255,88,255,0.7);
 }
 /*
     if id #                   #external{}
