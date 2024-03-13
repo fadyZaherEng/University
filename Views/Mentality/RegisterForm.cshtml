@@ -9,17 +9,26 @@
     margin: 20px;
     padding: 20px;
     height:max-content;
-    border: 1px dashed #000;
-    border-radius: 5px;
+    border: 1px solid #000;
+    border-radius: 15px;
     background-color: #f9f9f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
    }
   </style>
  </head>
  <body>
-     <!--video 10 min 20 stop-->
-  <form method="post" >
-   <div class="register">
+     <!--method-->
+     <!--post for send sensitive data and  not show data-->
+     <!--get for send and show data-->
+     <!--dialog fro save only and not send-->
+     <!--action-->
+     <!--action is where send data-->
+     <!--novalidate for not show validation-->
+     <!--fidset to make shape of from-->
+     <fieldset  class="register" >
+  <legend>Register Form</legend>
+  <form method="post" action="/register.cshtml" novalidate>
+
     <!--Select-->
     <label for="salutation">Salutation</label><br/>
     <select id="salutation" name="salutation">
@@ -35,7 +44,7 @@
     <label for="firstname">First Name:</label>
     <input type="text" id="firstname" name="firstname" placeholder="Firstname" required value="John" readonly><br/><br/>
     <label for="lastname">Last Name:</label>
-    <input type="text" id="lastname" name="lastname" placeholder="Lastname" required disabled><br/><br/>
+    <input type="text" id="lastname" name="lastname" placeholder="Lastname"  disabled><br/><br/>
     <label type="text" for="Gender">Gender:&nbsp;&nbsp;</label>
     <!--End of Text-->
     <!--########################################-->
@@ -126,7 +135,7 @@
     <input type="submit" value="Submit">&nbsp;&nbsp;
     <input type="reset" value="Reset">
     <!--End of Submit and Reset-->
-   </div>
   </form>
+  </fieldset>
  </body>
 </html>
