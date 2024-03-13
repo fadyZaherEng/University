@@ -1,43 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - University</title>
-    <link rel="icon" href="/assets/test.jpg">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/GridView.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/ListView.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/rooms.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/menu.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/roomDetails.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/AppTheme.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/table.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/AddStudentcss.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/studentcss.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/University.styles.css" asp-append-version="true" />
+
 </head>
 <body>
-    <div class="container">
-        <h1>University Menu</h1>
-        <nav>
-            <a href="/Home/Index">Home University</a>
-            <a href="/Teacher/GetTeachers" >Teachers</a>
-            <a href="/Student/GetStudents">Students</a>
-            <a href="/Course/GetCourses">Courses</a>
-            <a href="/Room/GetRooms">Rooms</a>
-            <div class="animation start-home"></div>
-        </nav></br>
-       
-    </div></br>
+  
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
-    <footer class="border-top footer text-muted">
-        <div class="container">
-             University 2024
-        </div>
-    </footer>
+   
 </body>
 </html>
