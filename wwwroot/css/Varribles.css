@@ -1,0 +1,25 @@
+﻿/*Varribles*/
+/*
+    Local Varribles define in html element 
+*/
+h1 {
+    --MainBackGroundColor: rgb(128 128 128);
+    --MainColor: rgb(255 255 255);
+}
+/*
+    Global varribles define in  all html because find in thml tag
+*/
+html {
+    --MainBackGroundColor: rgb(128 128 128);
+    --MainColor: rgb(255 255 255);
+}
+.external-css {
+    color: var(--MainColor);
+    background-color: var(--MainBackGroundColor);
+    
+}
+/*
+    if id #                   #external{}
+    if class                  .external{}
+    if Html element Name      p{}
+*/

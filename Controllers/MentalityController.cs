@@ -32,5 +32,9 @@ namespace University.Controllers
         {
             return View();
         }
+        public ActionResult Varriables()
+        {
+            return View();
+        }
     }
 }
